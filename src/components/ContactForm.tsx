@@ -227,118 +227,21 @@ export const ContactForm: React.FC = () => {
               >
                 <span className="inline-flex items-center gap-2.5">
                   <MessageCircle className="w-5 h-5" aria-hidden="true" />
-                  <span>WhatsApp Us Directly</span>
+                  <span>WhatsApp: {contactConfig.phoneNumber}</span>
                 </span>
                 <span>Open Chat →</span>
               </a>
 
-              {contactConfig.phoneNumber ? (
-                <a
-                  href={`tel:${contactConfig.phoneNumber.replace(/\s+/g, '')}`}
-                  className="w-full flex items-center justify-between px-5 py-4 bg-white/10 hover:bg-white hover:text-[#1A1A1A] text-white border border-white/25 font-heading font-bold text-xs sm:text-sm uppercase tracking-[0.14em] transition-colors"
-                >
-                  <span className="inline-flex items-center gap-2.5">
-                    <PhoneCall className="w-4 h-4 text-[#FF6B35]" aria-hidden="true" />
-                    <span>Click to Call: {contactConfig.phoneNumber}</span>
-                  </span>
-                  <span>Dial →</span>
-                </a>
-              ) : (
-                <div className="p-4 bg-white/5 border border-white/15 text-xs text-white/80 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="inline-flex items-center gap-2 font-semibold text-white">
-                      <PhoneCall className="w-4 h-4 text-[#FF6B35]" aria-hidden="true" />
-                      <span>Click-to-Call Integration Ready</span>
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => setShowAdminConfig((prev) => !prev)}
-                      className="text-[11px] font-semibold text-[#FF6B35] underline hover:text-white"
-                    >
-                      {showAdminConfig ? 'Hide Setup' : 'Configure Number'}
-                    </button>
-                  </div>
-                  <p className="text-white/65 leading-relaxed">
-                    Official phone number is configurable via{' '}
-                    <code className="text-white/90">VITE_BUSINESS_PHONE</code> or the quick setup
-                    panel below prior to launch (no placeholder phone numbers are invented).
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* Configurable Contact Settings Drawer for Owner / Launch Verification */}
-            <div className="pt-2 border-t border-white/10">
-              <button
-                type="button"
-                onClick={() => setShowAdminConfig((prev) => !prev)}
-                className="inline-flex items-center gap-2 text-xs text-white/65 hover:text-[#FF6B35] transition-colors"
+              <a
+                href={`tel:${contactConfig.phoneNumber.replace(/\s+/g, '')}`}
+                className="w-full flex items-center justify-between px-5 py-4 bg-white/10 hover:bg-white hover:text-[#1A1A1A] text-white border border-white/25 font-heading font-bold text-xs sm:text-sm uppercase tracking-[0.14em] transition-colors"
               >
-                <Settings className="w-3.5 h-3.5 text-[#FF6B35]" aria-hidden="true" />
-                <span>
-                  {showAdminConfig
-                    ? 'Close Business Phone / WhatsApp Configurator'
-                    : 'Configure Official WhatsApp & Phone Number'}
+                <span className="inline-flex items-center gap-2.5">
+                  <PhoneCall className="w-4 h-4 text-[#FF6B35]" aria-hidden="true" />
+                  <span>Click to Call: {contactConfig.phoneNumber}</span>
                 </span>
-              </button>
-
-              {showAdminConfig && (
-                <form
-                  onSubmit={handleSaveRuntimeConfig}
-                  className="mt-3 p-4 bg-black/60 border border-white/20 space-y-3"
-                >
-                  <p className="text-[11px] text-white/75 leading-relaxed">
-                    Set the official Sakshi Enterprises WhatsApp &amp; voice call number to activate
-                    direct <code className="text-[#FF6B35]">tel:</code> Click-to-Call and{' '}
-                    <code className="text-[#FF6B35]">wa.me/</code> routing:
-                  </p>
-                  <div>
-                    <label
-                      htmlFor="config-whatsapp"
-                      className="block text-[11px] uppercase tracking-wider text-white/70 mb-1"
-                    >
-                      WhatsApp Number (with country code, e.g. 9198XXXXXXXX)
-                    </label>
-                    <input
-                      id="config-whatsapp"
-                      type="text"
-                      value={adminWhatsappInput}
-                      onChange={(e) => setAdminWhatsappInput(e.target.value)}
-                      placeholder="e.g. 919822000000"
-                      className="w-full px-3 py-2 bg-[#1A1A1A] border border-white/25 text-white text-xs"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="config-phone"
-                      className="block text-[11px] uppercase tracking-wider text-white/70 mb-1"
-                    >
-                      Click-to-Call Phone Number
-                    </label>
-                    <input
-                      id="config-phone"
-                      type="text"
-                      value={adminPhoneInput}
-                      onChange={(e) => setAdminPhoneInput(e.target.value)}
-                      placeholder="e.g. +91 98220 00000"
-                      className="w-full px-3 py-2 bg-[#1A1A1A] border border-white/25 text-white text-xs"
-                    />
-                  </div>
-                  <div className="flex items-center justify-between gap-2">
-                    <button
-                      type="submit"
-                      className="px-4 py-2 bg-[#FF6B35] text-white text-xs font-bold uppercase tracking-wider"
-                    >
-                      Save Contact Config
-                    </button>
-                    {configSavedNotice && (
-                      <span className="text-xs text-emerald-400 font-medium">
-                        ✓ Active across site
-                      </span>
-                    )}
-                  </div>
-                </form>
-              )}
+                <span>Dial →</span>
+              </a>
             </div>
 
             {/* Service Location & Email Details */}
