@@ -2,7 +2,8 @@
 
 **"Protecting Spaces. Enhancing Living."**
 
-- **Live Website:** [https://sakshigadpayle2005-rgb.github.io/sakshi-enterprises/](https://sakshigadpayle2005-rgb.github.io/sakshi-enterprises/)
+- **Live Vercel Website:** [https://sakshi-enterprises-pi.vercel.app/](https://sakshi-enterprises-pi.vercel.app/)
+- **Live GitHub Pages Mirror:** [https://sakshigadpayle2005-rgb.github.io/sakshi-enterprises/](https://sakshigadpayle2005-rgb.github.io/sakshi-enterprises/)
 - **Location:** Vathoda, Nagpur, Maharashtra, India
 - **Phone / WhatsApp:** `+91 95795 41303`
 - **Email:** `subodhgadpayle2610@gmail.com`
